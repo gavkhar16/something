@@ -179,3 +179,23 @@ div h3 {
   border: 1px solid #6e3aba;
   cursor: pointer;
 }
+
+h4 {
+font-size:calc();
+font-weight: 500;
+line-height: 117%;
+}
+
+.legendInfo{
+ display: flex;
+ flex-direction: column;
+}
+.legendPhoto {
+  width: 399px;
+  height: 562px;
+}
+.skill {
+display: grid;
+grid-template-columns: 250px 250px;
+grid-template-rows: 250px 250px;
+}
