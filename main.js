@@ -1,38 +1,45 @@
-function check() {
-    let sale = document.getElementsByName(`sale`)[0]
-
-    let span = document.getElementById(`SaleRate`)
-    span.innerHTML = sale.value
+function saleDate(){
+    let newDate = new Date()
+    let saleDate= new Date(2024, 7,20);   
+    let finishDate =saleDate-newDate   
+    let day =Math.floor(finishDate/(1000*60*60*24))    
+    let hours = Math.floor((finishDate% (1000*60*60*24))/(1000*60*60))    
+    let minutes = Math.floor((finishDate %(1000*60*60))/(1000*60))  
+    let seconds = Math.floor((finishDate%(1000*60))/1000)  
+    let dayValue= document.getElementsByClassName("time")[0]  
+    let hoursValue= document.getElementsByClassName("time")[1]  
+    let minutesValue= document.getElementsByClassName("time")[2] 
+    let secondsValue= document.getElementsByClassName("time") [3]  
+    
+    dayValue.innerHTML=day  
+    hoursValue.innerHTML=hours 
+    minutesValue.innerHTML=minutes
+    secondsValue.innerHTML=seconds  
     }
+    saleDate()
+    setInterval(()=> {
+        saleDate()
+    },1000)
 
-    function onlyNumbers() {
-        let input = document.getElementsByName('userPhone')[0]
-        let userPhone = input.value
-        let cleaned = userPhone.replace(/[^\d]/g, '')
+    function saleDatSecond(){
+        let newDate = new Date()
+        let saleDate= new Date(2024, 7,20);   
+        let finishDate =saleDate-newDate   
+        let day =Math.floor(finishDate/(1000*60*60*24))    
+        let hours = Math.floor((finishDate% (1000*60*60*24))/(1000*60*60))    
+        let minutes = Math.floor((finishDate %(1000*60*60))/(1000*60))  
+        let seconds = Math.floor((finishDate%(1000*60))/1000)  
+        let dayValue= document.getElementsByClassName("dataTime")[0]  
+        let hoursValue= document.getElementsByClassName("dataTime")[1]  
+        let minutesValue= document.getElementsByClassName("dataTime")[2] 
+        let secondsValue= document.getElementsByClassName("dataTime") [3]  
         
-        if (cleaned.length > 12) {
-            cleaned = cleaned.slice(0, 12);
+        dayValue.innerHTML=day  
+        hoursValue.innerHTML=hours 
+        minutesValue.innerHTML=minutes
+        secondsValue.innerHTML=seconds  
         }
-
-        if (cleaned.length >= 3 && cleaned.startsWith("998")) {
-            let formatted = "+998"
-            if (cleaned.length > 3){
-            formatted += "(" + cleaned.slice(3, 5)
-        }
-        if (cleaned.length > 5) {
-            formatted += ")" + cleaned.slice(5, 8)
-        }
-        if (cleaned.length > 8) {
-            formatted += "-" + cleaned.slice(8, 10)
-        }
-        if (cleaned.length > 10) {
-            formatted += "-" + cleaned.slice(10, 12)
-        }
-        input.value = formatted
-    } else {
-        input.value = "+998"
-    }
-    }
-
-    let gavharButton = document.querySelector('h2')
-    console.log(gavharButton)
+        saleDatSecond()
+        setInterval(()=> {
+            saleDate()
+        },1000)    
